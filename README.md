@@ -44,10 +44,3 @@ sudo cat /var/lib/rancher/k3s/server/node-token
 mkdir ~/.kube
 sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
 sudo chown $USER:$USER ~/.kube/config
-
-### 2. On Worker Nodes (Kali & Mint)
-# Join the cluster (replace values accordingly)
-curl -sfL https://get.k3s.io | K3S_URL=https://<MASTER_IP>:6443 K3S_TOKEN=<NODE_TOKEN> sh -
-
-### Verification (on Master)
-kubectl get nodes -o wide<img width="1776" height="220" alt="Screenshot from 2026-01-04 19-47-55" src="https://github.com/user-attachments/assets/5abe8a41-ab58-4112-b399-d38e3e33b0fc" />
